@@ -17,7 +17,7 @@ with open('data/FreebaseQA_fb_extract/FreebaseQA_fb_extract.txt') as src:
             continue
         s, p, o = line.split('\t')
         stat[p] += 1
-        if idx % 10000:
+        if idx % 100000 == 0:
             print(f'\r{idx} {p} {len(stat)}', end='')
 
 save_json(stat, 'data/rel.json')
