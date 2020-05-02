@@ -9,5 +9,6 @@ cdroot()
 
 classifier = TransformerClassifier()
 save_dir = 'data/model/rel_albert_large'
-classifier.fit('data/rel/train.tsv', 'data/rel/dev.tsv', save_dir, 'albert_xxlarge', max_length=64, epochs=10)
-classifier.evaluate('data/rel/train.tsv', save_dir=save_dir)
+# classifier.fit('data/rel/train.tsv', 'data/rel/dev.tsv', save_dir, 'albert_xxlarge', max_length=64, epochs=100)
+classifier.load(save_dir)
+classifier.evaluate('data/rel/eval.tsv', save_dir=save_dir)
